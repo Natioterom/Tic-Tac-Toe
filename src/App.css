@@ -1,0 +1,107 @@
+.App{
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0131;
+  font-family: 'Rock Salt', cursive;
+}
+
+.container_board{
+  display: flex;
+  flex-direction: column;
+}
+.board{
+  width: fit-content;
+  margin: 40px auto;
+  text-align: center;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+}
+.row{
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  position: relative;
+  border-radius: 10px;
+}
+.square{
+  width: 128px;
+  height: 128px;
+  border: 3px solid white;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 48px;
+  text-shadow: 0 0 8px #f23232, 0 0 12px  #f23232;
+  color: #eee;
+  box-shadow: inset 0 0 8px #ad7fdc, 0 0 12px  #ad7fdc;
+}
+.container_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button_start_game{
+  border: 2px solid white;
+  border-radius: 10px;
+  width:200px;
+  height: 30px;
+  color:white; 
+  background-color: rgb(39, 136, 7);
+  box-shadow: inset 0 0 8px #31e340, 0 0 12px  #31e340;
+  font-size: 20px;
+}
+.modal{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.5);
+}
+.container-modal{
+  background-color: #0b0131;
+  border: 2px solid white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  height: 300px;
+  box-shadow: inset 0 0 8px #31e340, 0 0 12px  #31e340;
+  color:#eee;
+  font-size: 12px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular';
+  text-shadow: 0 0 8px #62b9e5, 0 0 12px  #62b9e5;
+  letter-spacing: 1px;
+  padding: 6px;
+  text-align: center;
+}
+.container-buttons-modal{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.button-modal-close, .button-modal-start{
+  background-color: #e31f1f;
+  border: 2px solid white;
+  border-radius: 10px;
+  color:white;
+  box-shadow: 0 0 8px #f23232, 0 0 12px  #f23232;
+  width: 120px;
+  height: 30px;
+  margin-right: 40px;
+}
+.button-modal-start{
+  margin-right: 10px;
+  background-color: rgb(39, 136, 7);
+  box-shadow: inset 0 0 8px #31e340, 0 0 12px  #31e340;
+}
