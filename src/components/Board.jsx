@@ -54,6 +54,7 @@ export const Board = () => {
        const allSquare = selected.indexOf(selected.find(e => e === ''))
        if(allSquare === -1){
         setResult({winner:'No one', state:'tie'})
+        setShowModal(true)
        }
     }
 
