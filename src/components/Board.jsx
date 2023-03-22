@@ -9,7 +9,7 @@ export const Board = () => {
     const [ player, setPlayer ] = useState('O')
     const [ result, setResult ] = useState({winner:'none', state:'none'})
     const [ showModal, setShowModal ] = useState(false)
-    console.log(result)
+    const [ gameFinish, setGameFinish ] = useState(false)
     
     useEffect(()=> {
         checkWin()
@@ -63,10 +63,14 @@ export const Board = () => {
     setBoard(['','','','','','','','',''])
     setResult({winner:'none', state:'none'})
     setShowModal(false)
+    setPlayer('O')
+    setGameFinish(false)
  }
  const closeModal = () => {
     setShowModal(false)
     setResult({winner:'none', state:'none'})
+    setPlayer('O')
+    setGameFinish(true)
  }
  const winner = result.state ==='won' ? `Congratulations '${result.winner}' won the game!` : result.state ==='tie' ? 'its seems that is a tie' :''
     
@@ -75,25 +79,34 @@ export const Board = () => {
            <div className='board'>
             <div className='row'></div>
             <Square value={board[0]}
-                chooseSquare={() => chooseSquare(0)} />
+                chooseSquare={() => chooseSquare(0)} 
+                gameFinish={gameFinish}/>
             <Square value={board[1]}
-                chooseSquare={() => chooseSquare(1)} />
+                chooseSquare={() => chooseSquare(1)} 
+                gameFinish={gameFinish}/>
             <Square value={board[2]}
-                chooseSquare={() => chooseSquare(2)} />
+                chooseSquare={() => chooseSquare(2)} 
+                gameFinish={gameFinish}/>
             <div className='row'></div>
             <Square value={board[3]}
-                chooseSquare={() => chooseSquare(3)} />
+                chooseSquare={() => chooseSquare(3)} 
+                gameFinish={gameFinish}/>
             <Square value={board[4]}
-                chooseSquare={() => chooseSquare(4)} />
+                chooseSquare={() => chooseSquare(4)} 
+                gameFinish={gameFinish}/>
             <Square value={board[5]}
-                chooseSquare={() => chooseSquare(5)} />
+                chooseSquare={() => chooseSquare(5)} 
+                gameFinish={gameFinish}/>
             <div className='row'></div>
             <Square value={board[6]}
-                chooseSquare={() => chooseSquare(6)} />
+                chooseSquare={() => chooseSquare(6)} 
+                gameFinish={gameFinish}/>
             <Square value={board[7]}
-                chooseSquare={() => chooseSquare(7)} />
+                chooseSquare={() => chooseSquare(7)} 
+                gameFinish={gameFinish}/>
             <Square value={board[8]}
-                chooseSquare={() => chooseSquare(8)} />
+                chooseSquare={() => chooseSquare(8)} 
+                gameFinish={gameFinish}/>
         </div>
          {showModal ? <ModalWin 
          state = { winner}
